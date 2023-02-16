@@ -10,6 +10,11 @@
       "StackName": "amplify-mixmate-dev-184512",
       "StackId": "arn:aws:cloudformation:us-east-2:038377845007:stack/amplify-mixmate-dev-184512/2cb4af30-ad93-11ed-bed6-02f3f9c93a48",
       "AmplifyAppId": "d3t3je9xe7now9"
+    },
+    "categories": {
+      "auth": {
+        "mixmate633bc767": {}
+      }
     }
   }
 }

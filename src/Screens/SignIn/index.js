@@ -1,31 +1,71 @@
-import { Text, useTheme } from "react-native-paper";
-import { StyleSheet, ScrollView, View } from "react-native";
-import {useNavigation} from '@react-navigation/native';
+import * as React from "react";
+import { ScrollView, View, StyleSheet } from "react-native";
+import { Text, Button, useTheme, TextInput } from "react-native-paper";
+import { useNavigation } from "@react-navigation/core";
 
 function SignIn() {
     const theme = useTheme();
-  console.log(theme.colors.primary);
+    const navigate = useNavigation();
+
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+
+    function onNewAccountPress() {
+      navigate.navigate('NewAccount')
+    }
+
+    function onPasswordReset(){
+      navigate.navigate('PasswordReset')
+    }
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.root}>
-            <Text variant="headlineLarge" theme={{colors: ""}}>Login</Text>
+    <ScrollView style={{backgroundColor: theme.colors.background}} contentContainerStyle={styles.contentContainerStyle} showsVerticalScrollIndicator={false}>
+        <View style={styles.header}>
+            <Text variant="headlineLarge" style={{color: theme.colors.primary}}>Login</Text>
+        </View>
+        <View style={styles.form}>
+          <TextInput
+            label="Email"
+            value={email}
+            onChangeText={setEmail}
+            style={styles.formElement}
+            autoComplete="email"
+          />
+          <TextInput
+            label="Password"
+            value={password}
+            onChangeText={setPassword}
+            style={styles.formElement}
+            secureTextEntry
+            // right={<TextInput.Icon icon="eye" />}
+          />
+          <Button  style={styles.formElement} mode="contained">Login</Button>
+        </View>
+        <View>
+          <Button onPress={onNewAccountPress}>Create Account</Button>
+          <Button onPress={onPasswordReset}>Forgot Password?</Button>
         </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  root: {
-    alignItems: "center",
-    padding: 20,
+    root: {
+        backgroundColor: "#252426",
+    },
+  contentContainerStyle: {
     flex: 1,
-    paddingTop: 50,
-    height: "100%",
-    color: "31cbd5"
-
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
-  text : {
-    color: "31cbd5"
+  header: {
+    paddingTop: 40
+  },
+  form: {
+    width: '100%',
+  },
+  formElement: {
+    margin: 20
   }
 });
 

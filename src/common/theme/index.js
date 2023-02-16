@@ -4,8 +4,9 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: "31cbd5",
-    secondary: "000000",
+    primary: "#31CBD5",
+    secondary: "#000000",
+    background: "#252426"
   },
 };
 

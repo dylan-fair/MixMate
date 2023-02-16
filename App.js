@@ -1,15 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
 import theme from "./src/common/theme";
 import Navigation from "./src/navigation";
 
 export default function App() {
-  console.log(theme.colors.primary)
   return (
     <PaperProvider theme={theme}>
-      <View style={styles.container}>
-        <Navigation/>
+      <View style={{ backgroundColor: "#252426", flex: 1 }}>
+        <Navigation />
       </View>
     </PaperProvider>
   );
@@ -18,6 +17,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "000000",
+    backgroundColor: "#252426",
+    borderWidth: 4,
+    borderColor: "red",
   },
 });
