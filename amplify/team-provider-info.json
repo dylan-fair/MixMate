@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mixmate-dev-184512-authRole",
+      "UnauthRoleArn": "arn:aws:iam::038377845007:role/amplify-mixmate-dev-184512-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::038377845007:role/amplify-mixmate-dev-184512-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-mixmate-dev-184512-deployment",
+      "UnauthRoleName": "amplify-mixmate-dev-184512-unauthRole",
+      "StackName": "amplify-mixmate-dev-184512",
+      "StackId": "arn:aws:cloudformation:us-east-2:038377845007:stack/amplify-mixmate-dev-184512/2cb4af30-ad93-11ed-bed6-02f3f9c93a48",
+      "AmplifyAppId": "d3t3je9xe7now9"
+    }
+  }
+}
