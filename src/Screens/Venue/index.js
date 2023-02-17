@@ -1,6 +1,6 @@
 import { Text, useTheme } from "react-native-paper";
 import { ScrollView, StyleSheet, View } from "react-native";
-function DJ() {
+function Venue() {
   const theme = useTheme();
   return (
     <ScrollView
@@ -9,7 +9,7 @@ function DJ() {
       showsVerticalScrollIndicator={false}
     >  
         <View style={styles.header}>
-        <Text variant="headlineLarge">DJ</Text>
+        <Text variant="headlineLarge">Venue</Text>
         </View>
 
     </ScrollView>
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default DJ;
+export default Venue;

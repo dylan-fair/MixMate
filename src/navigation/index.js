@@ -7,11 +7,10 @@ import SignIn from "../Screens/AuthScreens/SignIn";
 import NewAccount from "../Screens/AuthScreens/NewAccount";
 import PasswordReset from "../Screens/AuthScreens/PasswordReset";
 import ActivateAccount from "../Screens/AuthScreens/ActivateAccount";
-import HomeScreen from "../Screens/HomeScreen";
 import ResendCodeScreen from "../Screens/AuthScreens/ActivateAccount/ResendCodeScreen";
 import Listener from "../Screens/Listener";
 import DJ from "../Screens/DJ";
-import Venue from "../Screens/Listener";
+import Venue from "../Screens/Venue";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,7 +25,6 @@ const Navigation = () => {
           <Stack.Screen name="ResendCodeScreen" component={ResendCodeScreen} />
           <Stack.Screen name="Listener" component={Listener} />
 
-          <Stack.Screen name="HomeScreen" component={HomeScreen} />
         </Stack.Navigator>
     </NavigationContainer>
   );
