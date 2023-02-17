@@ -4,7 +4,7 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import handleSignUp from "./HandleSignUp";
 
-import { emailRegex } from "../../common/constants/regex";
+import { emailRegex } from "../../../common/constants/regex";
 
 NewAccount = () => {
   const theme = useTheme();
@@ -99,7 +99,7 @@ NewAccount = () => {
           disabled={!(passTrue && emailTrue && userType)}
           style={styles.formElement}
           mode="contained"
-          onPress={() => handleSignUp(email, password, userType)}
+          onPress={() => handleSignUp(email, password, userType, navigation)}
         >
           Create Account
         </Button>

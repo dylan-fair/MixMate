@@ -1,8 +1,8 @@
 import { Auth } from 'aws-amplify';
 import { useNavigation } from "@react-navigation/core";
+import { View } from 'react-native';
 
-async function handleSignUp(username, password, userType) {
-    const navigation = useNavigation();
+async function handleSignUp(username, password, userType, navigation) {
   try {
     const attributes = { 'custom:userType': userType };
     const { user } = await Auth.signUp({

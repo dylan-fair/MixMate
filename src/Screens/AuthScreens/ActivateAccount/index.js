@@ -3,11 +3,11 @@ import { Text, useTheme, TextInput, Button } from "react-native-paper";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import confirmSignUp from "./HandleAuthCode";
+import { Auth } from "aws-amplify";
 
 ActivateAccount = () => {
   const theme = useTheme();
   const navigation = useNavigation();
-
   const [authCode, setAuthCode] = React.useState("");
   const [email, setEmail] = React.useState("");
 
@@ -44,7 +44,7 @@ ActivateAccount = () => {
         />
         <Button 
           style={styles.formElement}
-          onPress={() => {confirmSignUp(email, authCode)}}
+          onPress={() => {confirmSignUp(email, authCode, navigation)}}
           mode="contained"
           >Submit Code</Button>
       </View>
