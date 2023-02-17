@@ -8,17 +8,19 @@ import NewAccount from "../Screens/NewAccount";
 import PasswordReset from "../Screens/PasswordReset";
 import ActivateAccount from "../Screens/ActivateAccount";
 import HomeScreen from "../Screens/HomeScreen";
+import ResendCodeScreen from "../Screens/ActivateAccount/ResendCodeScreen";
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer >
-        <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="SignUp">
+        <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="ActivateAccount">
           <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="NewAccount" component={NewAccount} />
           <Stack.Screen name="PasswordReset" component={PasswordReset} />
           <Stack.Screen name="ActivateAccount" component={ActivateAccount} />
+          <Stack.Screen name="ResendCodeScreen" component={ResendCodeScreen} />
 
           <Stack.Screen name="HomeScreen" component={HomeScreen} />
         </Stack.Navigator>

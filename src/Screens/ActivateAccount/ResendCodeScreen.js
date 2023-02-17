@@ -4,19 +4,15 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import confirmSignUp from "./HandleAuthCode";
 
-ActivateAccount = () => {
+ResendCodeScreen = () => {
   const theme = useTheme();
   const navigation = useNavigation();
 
   const [authCode, setAuthCode] = React.useState("");
   const [email, setEmail] = React.useState("");
 
-  function resendCode() {
-    navigation.navigate("ResendCodeScreen")
-  }
-
-  function backToCreate() {
-    navigation.navigate("NewAccount")
+  function goToActiavte() {
+    navigation.navigate('ActivateAccount')
   }
 
   return (
@@ -26,7 +22,7 @@ ActivateAccount = () => {
       showsVerticalScrollIndicator={false}
     >
       <View>
-        <Text variant="headlineLarge" style={styles.header}>Confirm Account</Text>
+        <Text variant="headlineLarge" style={styles.header}>Resend Code</Text>
       </View>
       <View style={styles.form}>
         <TextInput
@@ -36,21 +32,14 @@ ActivateAccount = () => {
           value={email}
           onChangeText={setEmail}
         />
-        <TextInput
-          style={styles.formElement}
-          label="Confirmation Code"
-          value={authCode}
-          onChangeText={setAuthCode}
-        />
         <Button 
           style={styles.formElement}
           onPress={() => {confirmSignUp(email, authCode)}}
           mode="contained"
-          >Submit Code</Button>
+          >Resend Code</Button>
       </View>
       <View>
-        <Button onPress={resendCode}>Resend the code</Button>
-        <Button onPress={backToCreate}>Re-Create Account</Button>
+        <Button onPress={goToActiavte}>Confirm Account</Button>
       </View>
     </ScrollView>
   );
@@ -76,4 +65,4 @@ const styles = StyleSheet.create({
     margin: 20,
   },
 });
-export default ActivateAccount;
+export default ResendCodeScreen;

@@ -1,8 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
+import { Amplify } from "aws-amplify";
+import config from './src/aws-exports'
 import theme from "./src/common/theme";
 import Navigation from "./src/navigation";
+
+Amplify.configure(config)
 
 export default function App() {
   return (
